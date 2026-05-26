@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{00AF30CF-ADD3-4B02-B52E-906302BFA7B8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LocknLockManagement</RootNamespace>
+    <AssemblyName>LocknLockManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BUS\AccountBUS.cs" />
+    <Compile Include="BUS\AuthBUS.cs" />
+    <Compile Include="BUS\CategoryBUS.cs" />
+    <Compile Include="BUS\CustomerBUS.cs" />
+    <Compile Include="BUS\EmployeeBUS.cs" />
+    <Compile Include="BUS\ImportBUS.cs" />
+    <Compile Include="BUS\InvoiceBUS.cs" />
+    <Compile Include="BUS\ProductBUS.cs" />
+    <Compile Include="BUS\StatisticsBUS.cs" />
+    <Compile Include="BUS\SupplierBUS.cs" />
+    <Compile Include="Constants\AppColors.cs" />
+    <Compile Include="Constants\AppFonts.cs" />
+    <Compile Include="Constants\Messages.cs" />
+    <Compile Include="Constants\Permissions.cs" />
+    <Compile Include="Constants\UserRoles.cs" />
+    <Compile Include="DAL\Database\DBConnection.cs" />
+    <Compile Include="DAL\Repositories\AccountDAL.cs" />
+    <Compile Include="DAL\Repositories\CategoryDAL.cs" />
+    <Compile Include="DAL\Repositories\CustomerDAL.cs" />
+    <Compile Include="DAL\Repositories\EmployeeDAL.cs" />
+    <Compile Include="DAL\Repositories\ImportDAL.cs" />
+    <Compile Include="DAL\Repositories\InvoiceDAL.cs" />
+    <Compile Include="DAL\Repositories\ProductDAL.cs" />
+    <Compile Include="DAL\Repositories\StatisticsDAL.cs" />
+    <Compile Include="DAL\Repositories\SupplierDAL.cs" />
+    <Compile Include="DTO\AccountDTO.cs" />
+    <Compile Include="DTO\CategoryDTO.cs" />
+    <Compile Include="DTO\CustomerDTO.cs" />
+    <Compile Include="DTO\EmployeeDTO.cs" />
+    <Compile Include="DTO\ImportDetailDTO.cs" />
+    <Compile Include="DTO\ImportDTO.cs" />
+    <Compile Include="DTO\InvoiceDetailDTO.cs" />
+    <Compile Include="DTO\InvoiceDTO.cs" />
+    <Compile Include="DTO\ProductDTO.cs" />
+    <Compile Include="DTO\RoleDTO.cs" />
+    <Compile Include="DTO\SupplierDTO.cs" />
+    <Compile Include="GUI\Forms\Main\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\Main\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DateTimeHelper.cs" />
+    <Compile Include="Helpers\FormatHelper.cs" />
+    <Compile Include="Helpers\ImageHelper.cs" />
+    <Compile Include="Helpers\MessageBoxHelper.cs" />
+    <Compile Include="Helpers\PasswordHashHelper.cs" />
+    <Compile Include="Helpers\PermissionHelper.cs" />
+    <Compile Include="Helpers\SessionManager.cs" />
+    <Compile Include="Helpers\ValidationHelper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DAL\Interfaces\" />
+    <Folder Include="DAL\Mappers\" />
+    <Folder Include="Database\Backups\" />
+    <Folder Include="Database\Scripts\" />
+    <Folder Include="GUI\Components\" />
+    <Folder Include="GUI\Forms\Authentication\" />
+    <Folder Include="GUI\Forms\Dialogs\" />
+    <Folder Include="GUI\Forms\Splash\" />
+    <Folder Include="GUI\Themes\" />
+    <Folder Include="GUI\UserControls\Accounts\" />
+    <Folder Include="GUI\UserControls\Categories\" />
+    <Folder Include="GUI\UserControls\Customers\" />
+    <Folder Include="GUI\UserControls\Dashboard\" />
+    <Folder Include="GUI\UserControls\Employees\" />
+    <Folder Include="GUI\UserControls\Imports\" />
+    <Folder Include="GUI\UserControls\POS\" />
+    <Folder Include="GUI\UserControls\Products\" />
+    <Folder Include="GUI\UserControls\Settings\" />
+    <Folder Include="GUI\UserControls\Statistics\" />
+    <Folder Include="GUI\UserControls\Suppliers\" />
+    <Folder Include="GUI\UserControls\Warehouse\" />
+    <Folder Include="Resources\Fonts\" />
+    <Folder Include="Resources\Icons\" />
+    <Folder Include="Resources\Images\" />
+    <Folder Include="Resources\Templates\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
