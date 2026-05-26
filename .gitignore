@@ -1,0 +1,19 @@
+# Bỏ qua thư mục build của C# / .NET / Avalonia
+bin/
+obj/
+
+# Bỏ qua file cấu hình của Visual Studio 2022 (Máy Windows)
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Bỏ qua các file rác của hệ điều hành macOS (Máy Mac)
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Bỏ qua file cấu hình IDE nếu dùng Rider hoặc Visual Studio Code trên Mac
+.idea/
+.vscode/
